@@ -1,0 +1,166 @@
+/* Main wrapper for all flip cards */
+.flip-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+
+  font-family: "Quicksand", sans-serif;
+  color: #5c4033; /* soft brown for body text */
+}
+
+/* Title */
+.flip-cards-wrapper p.flip-card-page-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #4a2c2a; /* deep chocolate brown */
+  margin-bottom: 12px;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Description */
+.flip-cards-wrapper p.flip-card-page-description {
+  font-size: 18px;
+  color: #6a4e4b; /* soft warm brown */
+  margin-bottom: 6px;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* P.S. note */
+.flip-cards-wrapper p.flip-card-page-note {
+  font-size: 14px;
+  font-style: italic;
+  color: #d16b6b; /* romantic rosy red */
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Each flip card container */
+.flip-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 700px;
+  gap: 20px;
+  padding: 32px;
+  border-radius: 28px;
+
+  background-color: #fffaf7; /* matches your card style */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
+}
+
+/* Layout left or right */
+.flip-card-container.left {
+  flex-direction: row;
+}
+.flip-card-container.right {
+  flex-direction: row-reverse;
+}
+
+/* Flip card itself */
+.flip-card {
+  width: min(40vw, 220px);
+  height: min(40vw, 220px);
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  flex-shrink: 0;
+}
+
+.flip-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Front face */
+.flip-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Back face */
+.flip-back {
+  background: #ff6b6b; /* rosy pink */
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #b85c5c; /* romantic muted red */
+  margin: 0;
+}
+
+.card-sentence {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Page title styling */
+.flip-cards-wrapper h1 {
+  color: #8b0000; /* deep romantic red */
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.flip-cards-wrapper p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .flip-card-container {
+    max-width: 95%;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .card-sentence {
+    font-size: 14px;
+  }
+
+  .flip-cards-wrapper h1 {
+    font-size: 22px;
+  }
+
+  .flip-cards-wrapper p {
+    font-size: 14px;
+  }
+}

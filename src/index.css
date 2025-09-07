@@ -1,0 +1,46 @@
+/* index.css */
+
+/* Theme variables */
+:root {
+  --bg: #ffe4d8;
+  --font: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    Arial, sans-serif;
+  --text: #4a2c2a;
+}
+
+/* Reset & full height */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply background + font globally */
+body {
+  background-color: var(--bg);
+  font-family: var(--font);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Code blocks (optional keep) */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Make sure App containers don't override */
+.App,
+#root > .App {
+  min-height: 100%;
+  background: transparent; /* let body bg show through */
+}
+
+.App-header {
+  background: transparent !important;
+}

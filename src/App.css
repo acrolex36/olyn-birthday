@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffe4d8; /* pastel peach */
+  font-family: "Quicksand", sans-serif; /* matches your other pages */
+  color: #4a2c2a; /* soft brown for text */
+}
+
+/* Center text by default (can be overridden in page-specific css) */
+.App {
+  text-align: center;
+}

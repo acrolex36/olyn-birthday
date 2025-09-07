@@ -1,0 +1,323 @@
+/* Main container styles */
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  position: relative;
+  cursor: pointer;
+}
+
+.valentines {
+  position: relative;
+  top: 50px;
+  animation: up 3s linear infinite;
+}
+
+/* Keyframe animations */
+@keyframes up {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-30px); 
+  }
+}
+
+@keyframes heart {
+  0% {
+    transform: translateY(0) rotate(-45deg) scale(0.3);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150px) rotate(-45deg) scale(1.3);
+    opacity: 0.5;
+  }
+}
+
+@keyframes scale {
+  0%, 100% { 
+    transform: scaleX(1); 
+  }
+  50% { 
+    transform: scaleX(0.85); 
+  }
+}
+
+/* Envelope styles */
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f08080;
+}
+
+.envelope-before {
+  background-color: #f08080;
+  content: "";
+  position: absolute;
+  width: 212px;
+  height: 212px;
+  transform: rotate(45deg);
+  top: -105px;
+  left: 44px;
+  border-radius: 30px 0 0 0;
+}
+
+/* Front flap styles */
+.front {
+  position: absolute;
+  border-right: 180px solid #f4978e;
+  border-top: 95px solid transparent;
+  border-bottom: 100px solid transparent;
+  left: 120px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+
+.front-before {
+  position: absolute;
+  content: "";
+  border-left: 300px solid #f8ad9d;
+  border-top: 195px solid transparent;
+  left: -120px;
+  top: -95px;
+  width: 0;
+  height: 0;
+}
+
+/* Card styles */
+.card {
+  position: absolute;
+  background-color: #eae2b7;
+  width: 270px;
+  height: 170px;
+  top: 5px;
+  left: 15px;
+  box-shadow: -5px -5px 100px rgba(0,0,0,0.4);
+  transition: top 0.5s ease;
+  cursor: pointer;
+}
+
+.card.hovered {
+  top: -90px;
+}
+
+.card-before {
+  content: "";
+  position: absolute;
+  border: 3px dotted #003049;
+  width: 240px;
+  height: 140px;
+  left: 12px;
+  top: 12px;
+}
+
+.text {
+  position: absolute;
+  font-family: 'Brush Script MT', cursive;
+  font-size: 28px;
+  text-align: center;
+  line-height: 25px;
+  top: 32px;
+  left: 108px;
+  color: #003049;
+}
+
+/* Heart on card */
+.heart {
+  background-color: #d62828;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: absolute;
+  top: 110px;
+  left: 105px;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+.heart-before {
+  content: "";
+  background-color: #d62828;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+  top: -15px;
+  left: 0;
+}
+
+.heart-after {
+  content: "";
+  background-color: #d62828;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+  left: 15px;
+  top: 0;
+}
+
+/* Floating hearts container */
+.hearts {
+  position: absolute;
+}
+
+/* Floating hearts styles */
+.floating-heart {
+  background-color: red;
+  display: inline-block;
+  height: 10px;
+  margin: 0 10px;
+  position: absolute;
+  transform: rotate(-45deg);
+  width: 10px;
+  top: 50px;
+}
+
+.floating-heart-before {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+  top: -5px;
+  left: 0;
+}
+
+.floating-heart-after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+  left: 5px;
+  top: 0;
+}
+
+/* Individual floating heart positions and animations */
+.floating-heart-1 { 
+  left: 10px; 
+  animation: heart 1s ease-out infinite; 
+}
+
+.floating-heart-2 { 
+  left: 30px; 
+  animation: heart 2s ease-out infinite; 
+}
+
+.floating-heart-3 { 
+  left: 50px; 
+  animation: heart 1.5s ease-out infinite; 
+}
+
+.floating-heart-4 { 
+  left: 70px; 
+  animation: heart 2.3s ease-out infinite; 
+}
+
+.floating-heart-5 { 
+  left: 90px; 
+  animation: heart 1.7s ease-out infinite; 
+}
+
+/* Shadow */
+.shadow {
+  position: absolute;
+  width: 330px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.3);
+  top: 265px;
+  left: -15px;
+  animation: scale 3s linear infinite;
+  z-index: -1;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: #eae2b7;
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 3px dotted #003049;
+  position: relative;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.modal.open .modal-content {
+  transform: scale(1);
+}
+
+.modal-text {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #003049;
+  text-align: justify;
+}
+
+.modal-title {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 32px;
+  color: #d62828;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-birthday {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 40px;
+  color: #003049;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #003049;
+  cursor: pointer;
+  font-weight: bold;
+}

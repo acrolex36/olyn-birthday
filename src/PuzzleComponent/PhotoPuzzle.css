@@ -1,0 +1,171 @@
+/* Background */
+.photo-puzzle-page {
+  min-height: 100vh;
+  background-color: #ffe4d8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Card style */
+.puzzle-card {
+  background-color: #fffaf7;
+  padding: 32px 80px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Title & subtitle */
+.puzzle-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #8B0000; /* romantic deep red */
+  margin-bottom: 32px;
+}
+
+.puzzle-subtitle {
+  font-size: 16px;
+  color: #7a5c58;
+}
+
+.puzzle-hint {
+  font-size: 14px;
+  font-style: italic;
+  color: #9b7c75;
+  margin-bottom: 20px;
+}
+
+/* Puzzle board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 90vw;
+  max-width: 360px;
+  aspect-ratio: 1;
+  margin: 30px auto;
+  gap: 2px;
+}
+
+.tile {
+  background-size: cover;
+  background-position: center;
+  cursor: grab;
+  border: 1px solid #ccc;
+}
+
+.tile:active {
+  cursor: grabbing;
+  opacity: 0.7;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 10px;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 90%;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.modal-image {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.animated-sentence {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 15px 0;
+  text-align: justify;
+}
+
+.next-button {
+  padding: 12px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: #ff6b6b;;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.next-button:hover {
+  background: #e85c5c;
+}
+
+/* 📱 Responsive adjustments */
+@media (max-width: 600px) {
+  .puzzle-title {
+    font-size: 22px;
+  }
+
+  .puzzle-subtitle {
+    font-size: 16px;
+  }
+
+  .puzzle-hint {
+    font-size: 13px;
+  }
+
+  .puzzle-card {
+    padding: 20px 15px;
+    border-radius: 15px;
+  }
+
+  .board {
+    max-width: 300px;
+    margin: 20px auto;
+  }
+
+  .animated-sentence {
+    font-size: 13px;
+  }
+
+  .modal-image {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 400px) {
+  .puzzle-title {
+    font-size: 20px;
+  }
+
+  .puzzle-subtitle {
+    font-size: 15px;
+  }
+
+  .board {
+    max-width: 260px;
+  }
+
+  .modal-image {
+    max-width: 200px;
+  }
+}
